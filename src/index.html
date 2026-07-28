@@ -1,0 +1,494 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Best Enterprise | Buy &amp; Sell Air Conditioners</title>
+    <meta
+      name="description"
+      content="Browse verified new and used air conditioners near you, or list your old unit in minutes on Best Enterprise's trusted AC marketplace."
+    />
+
+    <!-- Google Fonts: Poppins for headings, Inter for body, IBM Plex Mono for prices/specs -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome for icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <!-- Shared stylesheet: variables, reset, header/nav, footer, buttons -->
+    <link rel="stylesheet" href="style.css" />
+
+    <style>
+      /* Hero */
+      .hero {
+        padding: 80px 0;
+        overflow: hidden;
+      }
+      .hero-inner {
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: 50px;
+        align-items: center;
+      }
+      .hero h1 {
+        font-size: 2.75rem;
+        margin: 14px 0 18px 0;
+        color: var(--color-text);
+      }
+      .hero-sub {
+        color: var(--color-text-muted);
+        max-width: 480px;
+        margin-bottom: 30px;
+        font-size: 1.05rem;
+      }
+
+      .search-box {
+        display: flex;
+        background-color: var(--color-surface);
+        border: 1px solid var(--color-border);
+        border-radius: 10px;
+        box-shadow: var(--shadow);
+        padding: 6px;
+        margin-bottom: 24px;
+        max-width: 520px;
+      }
+      .search-box input,
+      .search-box select {
+        border: none;
+        outline: none;
+        padding: 10px 12px;
+        font-family: var(--font-body);
+        font-size: 0.9rem;
+        background: transparent;
+        color: var(--color-text);
+      }
+      .search-box input {
+        flex: 1;
+      }
+      .search-box select {
+        border-left: 1px solid var(--color-border);
+      }
+      .hero-buttons {
+        display: flex;
+        gap: 16px;
+        flex-wrap: wrap;
+      }
+
+      /* Gauge visual */
+      .hero-visual {
+        display: flex;
+        justify-content: center;
+      }
+      .gauge {
+        position: relative;
+        width: 280px;
+        height: 280px;
+      }
+      .gauge-face {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        background: conic-gradient(
+          from 270deg,
+          var(--color-primary) 0deg 180deg,
+          var(--color-accent) 180deg 360deg
+        );
+        box-shadow: 0 20px 45px rgba(14, 134, 212, 0.25);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+      }
+      .gauge-face::before {
+        content: "";
+        position: absolute;
+        width: 74%;
+        height: 74%;
+        background-color: var(--color-surface);
+        border-radius: 50%;
+      }
+      .gauge-needle {
+        position: absolute;
+        width: 4px;
+        height: 38%;
+        background-color: var(--color-text);
+        border-radius: 4px;
+        top: 12%;
+        left: 50%;
+        transform-origin: bottom center;
+        transform: translateX(-50%) rotate(-18deg);
+        animation: needle-sway 4s ease-in-out infinite;
+        z-index: 2;
+      }
+      .gauge-center {
+        position: absolute;
+        width: 16px;
+        height: 16px;
+        background-color: var(--color-text);
+        border-radius: 50%;
+        z-index: 3;
+      }
+      @keyframes needle-sway {
+        0%,
+        100% {
+          transform: translateX(-50%) rotate(-22deg);
+        }
+        50% {
+          transform: translateX(-50%) rotate(18deg);
+        }
+      }
+      .gauge-label {
+        position: absolute;
+        top: 50%;
+        font-family: var(--font-heading);
+        font-weight: 600;
+        font-size: 0.85rem;
+        color: var(--color-surface);
+        background-color: rgba(16, 36, 62, 0.55);
+        padding: 6px 12px;
+        border-radius: 20px;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+      }
+      .gauge-label-left {
+        left: -10px;
+        transform: translateY(-50%);
+      }
+      .gauge-label-right {
+        right: -10px;
+        transform: translateY(-50%);
+      }
+
+      /* Stats strip */
+      .stats-strip {
+        background-color: var(--color-primary);
+        padding: 34px 0;
+      }
+      .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        text-align: center;
+      }
+      .stat span {
+        display: block;
+        font-family: var(--font-mono);
+        font-size: 1.6rem;
+        font-weight: 600;
+        color: #ffffff;
+      }
+      .stat p {
+        color: rgba(255, 255, 255, 0.85);
+        font-size: 0.85rem;
+        margin-top: 4px;
+      }
+
+      /* Category cards */
+      .category-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 24px;
+      }
+      .category-card {
+        background-color: var(--color-surface);
+        border-radius: var(--radius);
+        overflow: hidden;
+        box-shadow: var(--shadow);
+        transition:
+          transform 0.25s ease,
+          box-shadow 0.25s ease;
+      }
+      .category-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 20px 35px rgba(14, 134, 212, 0.18);
+      }
+      .category-card img {
+        width: 100%;
+        height: 150px;
+        object-fit: cover;
+      }
+      .category-card-body {
+        padding: 18px;
+      }
+      .category-card-body h3 {
+        font-size: 1.05rem;
+        margin-bottom: 6px;
+      }
+      .category-card-body p {
+        font-size: 0.85rem;
+        color: var(--color-text-muted);
+      }
+      .category-card--icon {
+        display: flex;
+        flex-direction: column;
+      }
+      .category-icon {
+        height: 150px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #eaf6ff;
+        color: var(--color-primary);
+        font-size: 2.6rem;
+      }
+
+      /* ─── Responsive (page-specific only) ─── */
+      @media (max-width: 900px) {
+        .hero-inner {
+          grid-template-columns: 1fr;
+        }
+        .hero-visual {
+          order: -1;
+        }
+        .category-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+      @media (max-width: 700px) {
+        .hero h1 {
+          font-size: 2rem;
+        }
+        .search-box {
+          flex-direction: column;
+        }
+        .search-box select {
+          border-left: none;
+          border-top: 1px solid var(--color-border);
+        }
+        .stats-grid {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 20px;
+        }
+        .category-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ============ HEADER / NAVIGATION ============ -->
+    <header class="site-header">
+      <div class="container header-inner">
+        <a href="#" class="logo">
+          <i class="fa-solid fa-snowflake"></i>
+          Best Enterprise
+        </a>
+
+        <button
+          class="hamburger"
+          id="hamburger-btn"
+          aria-label="Toggle menu"
+          aria-expanded="false"
+        >
+          <span></span><span></span><span></span>
+        </button>
+
+        <nav class="main-nav" id="main-nav">
+<a href="pages/Buy.html">Buy</a>
+                          <a href="pages/Sell.html">Sell</a>
+                          <a href="pages/Howitworks.html">How It Works</a>
+                          <a href="pages/Contact.html">Contact</a>
+        </nav>
+
+        <div class="header-actions">
+<a href="pages/signing.html" class="btn btn-ghost">Sign In</a>
+           <a href="pages/sellyourAc.html" class="btn btn-accent"
+             >Sell Your AC</a
+           >
+        </div>
+      </div>
+    </header>
+
+    <!-- ============ HERO SECTION ============ -->
+    <section class="hero">
+      <div class="container hero-inner">
+        <div class="hero-text">
+          <p class="eyebrow">
+            Best Enterprise's marketplace for air conditioners
+          </p>
+          <h1>Buy a cooler summer.<br />Sell the one collecting dust.</h1>
+          <p class="hero-sub">
+            Browse verified new &amp; used air conditioners near you, or list
+            your old unit in minutes and start getting offers today.
+          </p>
+
+          <!-- Simple search form — no backend, just styled inputs -->
+          <form class="search-box">
+            <input
+              type="text"
+              placeholder="Search brand, e.g. Daikin, LG, Mitsubishi"
+            />
+            <select>
+              <option>Any Type</option>
+              <option>Window AC</option>
+              <option>Split System</option>
+              <option>Portable AC</option>
+              <option>Central / Ducted</option>
+            </select>
+            <button type="submit" class="btn btn-primary">Search</button>
+          </form>
+
+          <div class="hero-buttons">
+            <a href="pages/Buy.html" class="btn btn-primary"
+              >Browse Listings</a
+            >
+            <a href="pages/sellyourAc.html" class="btn btn-outline"
+              >List Your AC — It's Free</a
+            >
+          </div>
+        </div>
+
+        <!-- Signature visual: cool-to-warm gauge representing Buy vs Sell -->
+        <div class="hero-visual">
+          <div class="gauge">
+            <div class="gauge-face">
+              <div class="gauge-needle"></div>
+              <div class="gauge-center"></div>
+            </div>
+            <div class="gauge-label gauge-label-left">
+              <i class="fa-solid fa-snowflake"></i> Buy
+            </div>
+            <div class="gauge-label gauge-label-right">
+              <i class="fa-solid fa-fire"></i> Sell
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ TRUST / STATS STRIP ============ -->
+    <section class="stats-strip">
+      <div class="container stats-grid">
+        <div class="stat">
+          <span>1,240+</span>
+          <p>Units listed</p>
+        </div>
+        <div class="stat">
+          <span>850+</span>
+          <p>Happy buyers</p>
+        </div>
+        <div class="stat">
+          <span>100%</span>
+          <p>Verified sellers</p>
+        </div>
+        <div class="stat">
+          <span>~2 hrs</span>
+          <p>Avg. seller response</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SHOP BY CATEGORY ============ -->
+    <section class="section" id="categories">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Shop by type</p>
+          <h2>Find the right unit for your space</h2>
+        </div>
+
+        <div class="category-grid">
+          <a href="pages/Buy.html" class="category-card">
+            <img
+              src="Assets/images/IFB Air Conditioners.jpg"
+              alt="Window air conditioner"
+            />
+            <div class="category-card-body">
+              <h3>Window AC</h3>
+              <p>Compact and easy to install in a standard window frame.</p>
+            </div>
+          </a>
+
+          <a href="pages/Buy.html" class="category-card">
+            <img
+              src="https://images.unsplash.com/photo-1718203862467-c33159fdc504?auto=format&fit=crop&w=500&q=80"
+              alt="Split system outdoor unit"
+            />
+            <div class="category-card-body">
+              <h3>Split System</h3>
+              <p>Quiet indoor unit with a separate outdoor condenser.</p>
+            </div>
+          </a>
+
+          <a href="pages/Buy.html" class="category-card">
+            <img
+              src="https://images.unsplash.com/photo-1638444547500-5a63a2450065?auto=format&fit=crop&w=500&q=80"
+              alt="Multiple air conditioning units on a building"
+            />
+            <div class="category-card-body">
+              <h3>Multi-Split / Central</h3>
+              <p>Cool several rooms from one outdoor unit or ducted system.</p>
+            </div>
+          </a>
+
+          <a
+            href="pages/Buy.html"
+            class="category-card category-card--icon"
+          >
+            <img src="Assets/images/AC repair.jpg" alt="AC maintenance service" />
+            <div class="category-icon"><i class="fa-solid fa-wind"></i></div>
+            <div class="category-card-body">
+              <h3>Services &amp; Maintenance</h3>
+              <p>Repair or maintain your AC for better performance.</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div class="footer-brand">
+          <a href="#" class="logo logo-footer">
+            <i class="fa-solid fa-snowflake"></i>
+            Best Enterprise
+          </a>
+          <p>
+            A simple, trusted marketplace for buying and selling air
+            conditioners across Australia.
+          </p>
+        </div>
+
+        <div class="footer-column">
+          <h4>Buy</h4>
+          <a href="pages/Buy.html">Browse All Listings</a>
+          <a href="pages/Buy.html">Window ACs</a>
+          <a href="pages/Buy.html">Split Systems</a>
+          <a href="pages/Buy.html">Central / Ducted</a>
+        </div>
+
+        <div class="footer-column">
+          <h4>Sell</h4>
+          <a href="pages/sellyourAc.html">List an Item</a>
+          <a href="pages/Sell.html">Pricing Guide</a>
+          <a href="pages/Sell.html">Seller Tips</a>
+        </div>
+
+        <div class="footer-column">
+          <h4>Company</h4>
+          <a href="pages/Howitworks.html">How It Works</a>
+          <a href="pages/Contact.html">Contact Us</a>
+          <a href="pages/Contact.html">FAQ</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Best Enterprise. All rights reserved.</p>
+        <div class="social-links">
+          <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js" defer></script>
+  </body>
+</html>
