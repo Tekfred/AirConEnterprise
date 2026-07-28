@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us | Best Enterprise</title>
+  <meta name="description" content="Get in touch with Best Enterprise — we're happy to help with buying, selling, or any questions about your air conditioner listing." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Shared stylesheet: variables, reset, header/nav, footer, buttons -->
+  <link rel="stylesheet" href="../style.css">
+
+  <style>
+    /* ─────────────────────────────────────────────────────────
+       CONTACT PAGE — PAGE-SPECIFIC CSS ONLY
+       (shared CSS now lives in style.css)
+       ───────────────────────────────────────────────────────── */
+
+    /* Page hero */
+    .page-hero { background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%); padding: 70px 0; text-align: center; color: white; }
+    .page-hero h1 { font-size: 2.5rem; color: white; margin-bottom: 12px; }
+    .page-hero p { font-size: 1.05rem; color: rgba(255,255,255,0.88); max-width: 520px; margin: 0 auto; }
+
+    /* Contact layout */
+    .contact-layout {
+      display: grid;
+      grid-template-columns: 1fr 1.6fr;
+      gap: 50px;
+      align-items: start;
+    }
+
+    /* Info column */
+    .contact-info h2 { font-size: 1.6rem; margin-bottom: 18px; }
+    .contact-info p { color: var(--color-text-muted); margin-bottom: 32px; font-size: 0.96rem; }
+    .contact-detail { display: flex; align-items: flex-start; gap: 16px; margin-bottom: 24px; }
+    .contact-detail-icon { width: 44px; height: 44px; border-radius: 50%; background-color: #eaf6ff; color: var(--color-primary); display: flex; align-items: center; justify-content: center; font-size: 1rem; flex-shrink: 0; }
+    .contact-detail-text strong { display: block; font-size: 0.9rem; color: var(--color-text); margin-bottom: 2px; }
+    .contact-detail-text span { font-size: 0.88rem; color: var(--color-text-muted); }
+
+    /* Form card */
+    .form-card { background-color: var(--color-surface); border-radius: var(--radius); padding: 40px; box-shadow: var(--shadow); }
+    .form-card h3 { font-size: 1.3rem; margin-bottom: 24px; }
+
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .form-group { margin-bottom: 18px; }
+    .form-group label { display: block; font-size: 0.88rem; font-weight: 600; color: var(--color-text); margin-bottom: 6px; }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1.5px solid var(--color-border);
+      border-radius: 8px;
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      color: var(--color-text);
+      background-color: white;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+      outline: none;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--color-primary);
+      box-shadow: 0 0 0 3px rgba(14,134,212,0.12);
+    }
+    .form-group input.input-error,
+    .form-group select.input-error,
+    .form-group textarea.input-error {
+      border-color: #e53e3e;
+    }
+    .form-group textarea { resize: vertical; min-height: 120px; }
+    .form-error { display: none; font-size: 0.8rem; color: #e53e3e; margin-top: 5px; }
+    .form-submit { margin-top: 8px; width: 100%; padding: 14px; font-size: 1rem; }
+    .form-success {
+      display: none;
+      background-color: #e6f9f2;
+      border: 1.5px solid var(--color-success);
+      color: #1a7a50;
+      border-radius: 8px;
+      padding: 14px 18px;
+      font-size: 0.9rem;
+      margin-top: 16px;
+      font-weight: 500;
+    }
+
+    /* ─── Responsive (page-specific only) ─── */
+    @media (max-width: 900px) {
+      .contact-layout { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 700px) {
+      .page-hero h1 { font-size: 1.8rem; }
+      .form-row { grid-template-columns: 1fr; }
+      .form-card { padding: 24px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ============ HEADER / NAVIGATION ============ -->
+  <header class="site-header">
+    <div class="container header-inner">
+
+      <a href="../../Home.html" class="logo">
+        <i class="fa-solid fa-snowflake"></i>
+        Best Enterprise
+      </a>
+
+      <button class="hamburger" id="hamburger-btn" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="main-nav" id="main-nav">
+        <a href="Buy.html">Buy</a>
+        <a href="Sell.html">Sell</a>
+        <a href="Howitworks.html">How It Works</a>
+        <a href="Contact.html">Contact</a>
+      </nav>
+
+      <div class="header-actions">
+        <a href="signing.html" class="btn btn-ghost">Sign In</a>
+        <a href="sellyourAc.html" class="btn btn-accent">Sell Your AC</a>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- ============ PAGE HERO ============ -->
+  <section class="page-hero">
+    <div class="container">
+      <p class="eyebrow" style="color:rgba(255,255,255,0.75);">We're here to help</p>
+      <h1>Contact Us</h1>
+      <p>Have a question about a listing or need support? Drop us a message and we'll get back to you quickly.</p>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT SECTION ============ -->
+  <section class="section" id="contact">
+    <div class="container">
+      <div class="contact-layout">
+
+        <!-- Info column -->
+        <div class="contact-info">
+          <h2>Get in touch</h2>
+          <p>We aim to respond to all enquiries within a few hours during business days. You can also reach us directly via the details below.</p>
+
+          <div class="contact-detail">
+            <div class="contact-detail-icon"><i class="fa-solid fa-envelope"></i></div>
+            <div class="contact-detail-text">
+              <strong>Email</strong>
+              <span>support@bestenterprise.com</span>
+            </div>
+          </div>
+
+          <div class="contact-detail">
+            <div class="contact-detail-icon"><i class="fa-solid fa-phone"></i></div>
+            <div class="contact-detail-text">
+              <strong>Phone</strong>
+              <span>+233 55 000 1234</span>
+            </div>
+          </div>
+
+          <div class="contact-detail">
+            <div class="contact-detail-icon"><i class="fa-solid fa-location-dot"></i></div>
+            <div class="contact-detail-text">
+              <strong>Office</strong>
+              <span>12 Independence Ave, Accra, Ghana</span>
+            </div>
+          </div>
+
+          <div class="contact-detail">
+            <div class="contact-detail-icon"><i class="fa-solid fa-clock"></i></div>
+            <div class="contact-detail-text">
+              <strong>Business Hours</strong>
+              <span>Mon – Fri, 8 am – 5 pm GMT</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact form -->
+        <div class="form-card">
+          <h3>Send us a message</h3>
+          <form id="contact-form" novalidate>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="contact-name">Your Name</label>
+                <input type="text" id="contact-name" name="name" placeholder="e.g. Kofi Mensah" />
+                <span class="form-error" aria-live="polite"></span>
+              </div>
+              <div class="form-group">
+                <label for="contact-email">Email Address</label>
+                <input type="email" id="contact-email" name="email" placeholder="you@example.com" />
+                <span class="form-error" aria-live="polite"></span>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="contact-subject">Subject</label>
+              <select id="contact-subject" name="subject">
+                <option value="">Select a subject…</option>
+                <option>Question about a listing</option>
+                <option>Selling my AC</option>
+                <option>Technical support</option>
+                <option>Billing enquiry</option>
+                <option>Other</option>
+              </select>
+              <span class="form-error" aria-live="polite"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="contact-message">Message</label>
+              <textarea id="contact-message" name="message" placeholder="Tell us how we can help…"></textarea>
+              <span class="form-error" aria-live="polite"></span>
+            </div>
+
+            <button type="submit" class="btn btn-primary form-submit">Send Message</button>
+
+            <div class="form-success" role="alert">
+              <i class="fa-solid fa-circle-check"></i>&nbsp; Thanks! Your message has been sent. We'll be in touch shortly.
+            </div>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a href="../../Home.html" class="logo logo-footer">
+          <i class="fa-solid fa-snowflake"></i>
+          Best Enterprise
+        </a>
+        <p>A simple, trusted marketplace for buying and selling air conditioners across Australia.</p>
+      </div>
+
+      <div class="footer-column">
+        <h4>Buy</h4>
+        <a href="Buy.html">Browse All Listings</a>
+        <a href="Buy.html">Window ACs</a>
+        <a href="Buy.html">Split Systems</a>
+        <a href="Buy.html">Central / Ducted</a>
+      </div>
+
+      <div class="footer-column">
+        <h4>Sell</h4>
+        <a href="sellyourAc.html">List an Item</a>
+        <a href="Sell.html">Pricing Guide</a>
+        <a href="Sell.html">Seller Tips</a>
+      </div>
+
+      <div class="footer-column">
+        <h4>Company</h4>
+        <a href="Howitworks.html">How It Works</a>
+        <a href="Contact.html">Contact Us</a>
+        <a href="Contact.html">FAQ</a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2026 Best Enterprise. All rights reserved.</p>
+      <div class="social-links">
+        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
