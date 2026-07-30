@@ -1,54 +1,64 @@
 # Best Enterprise — AC Marketplace
 
-Buy and sell air conditioners in Ghana. Verified sellers, transparent pricing, and local pickup.
+**Buy and sell air conditioners in Ghana easily and safely.**
 
-## Pages
+Find verified sellers, see clear prices, and arrange local pickup — all in one place.
 
-| Page | Path | What it does |
-| --- | --- | --- |
-| Home | `src/index.html` | Browse featured categories and top listings |
-| Buy | `src/pages/Buy.html` | Search and browse available AC units |
-| Sell | `src/pages/Sell.html` | Three-step guide to selling your unit |
-| List Your AC | `src/pages/sellyourAc.html` | Form to publish a free listing |
-| How It Works | `src/pages/Howitworks.html` | Why Best Enterprise, testimonials |
-| Contact | `src/pages/Contact.html` | Support form and office details |
-| Sign In | `src/pages/signing.html` | User authentication |
+---
 
-## Quick start
+## What you can do
 
-```bash
-# Open the home page in a browser
-open src/index.html
-```
+| What you want to do          | Where to go          |
 
-Or open `src/index.html` directly from your file manager.
+| Browse and buy an AC        | **Buy** page         |
 
-## How to browse
+| Sell your AC                | **Sell** page        |
 
-1. Open **Buy** (`src/pages/Buy.html`).
-2. Use the search strip to filter by brand or type (Window, Split, Central).
-3. Click **View Listing** on any card to contact the seller.
+| List your AC for free       | **List Your AC**     |
 
-## How to list your AC
+| Learn how it works          | **How It Works**     |
 
-1. Click **Sell Your AC** from any page.
-2. Fill in the four sections:
-   - AC Details — brand, model, type, condition
-   - Photos — upload up to 6 images
-   - Pricing & Location — set your price and town
-   - Contact Info — phone and optional email
-3. Click **Publish Free Listing**.
+| Get help or contact us      | **Contact**          |
 
-## Tech stack
+| Sign in to your account     | **Sign In**          |
 
-- HTML5 + CSS custom properties
-- Vanilla JavaScript (no frameworks)
-- Font Awesome 6 for icons
-- Google Fonts: Poppins, Inter, IBM Plex Mono
+---
 
-## Contact
+## How to buy an air conditioner
 
-- Email: support@bestenterprise.com
-- Phone: +233 55 000 1234
-- Office: 12 Independence Ave, Accra, Ghana
-- Hours: Mon – Fri, 8 am – 5 pm GMT
+1. Go to the **Buy** page.
+2. Use the search bar to filter by brand or type (Window, Split, or Central).
+3. Browse the available units.
+4. Click View Listing on any AC you like.
+5. Contact the seller directly to arrange viewing and pickup.
+
+That’s it — simple and transparent.
+
+---
+
+## How to sell your air conditioner
+
+1. Click **Sell Your AC** from any page (or go to the **List Your AC** page).
+2. Fill in the form with these details:
+   - AC Details — brand, model, type, and condition
+   - Photos — upload up to 6 clear pictures
+   - Pricing & Location** — set your price and town
+   - Contact Info** — your phone number (email is optional)
+3. Click Publish Free Listing**.
+
+Your AC will appear on the marketplace for free. Buyers can then contact you directly.
+
+---
+
+## Need help?
+
+We’re here for you:
+
+- mail: support@bestenterprise.com  
+- **Phone:** +233 55 000 1234  
+- **Office:** 12 Independence Ave, Accra, Ghana  
+- **Hours:** Monday – Friday, 8 am – 5 pm (GMT)
+
+---
+
+Best Enterprise — Making buying and selling air conditioners in Ghana simple, safe, and transparent.
