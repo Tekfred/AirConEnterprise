@@ -19,7 +19,7 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
 
-    <!-- Shared stylesheet: variables, reset, header/nav, footer, buttons -->
+    <!-- Shared stylesheet: variables, reset, header/nav, footer, buttons, animation system -->
     <link rel="stylesheet" href="../style.css" />
 
     <style>
@@ -110,6 +110,16 @@
         color: var(--color-text-muted);
       }
 
+      /* Buttons */
+      .btn {
+        transition:
+          transform 0.25s ease,
+          box-shadow 0.25s ease;
+      }
+      .btn:hover {
+        transform: translateY(-3px);
+      }
+
       /* ─── Responsive (page-specific only) ─── */
       @media (max-width: 900px) {
         .feature-grid {
@@ -162,13 +172,18 @@
     </header>
 
     <!-- ============ PAGE HERO ============ -->
-    <section class="page-hero">
+    <section class="page-hero reveal">
       <div class="container">
-        <p class="eyebrow" style="color: rgba(255, 255, 255, 0.75)">
+        <p
+          class="eyebrow animate-pop-in"
+          style="color: rgba(255, 255, 255, 0.75); animation-delay: 0.1s;"
+        >
           Why CoolTrade
         </p>
-        <h1>Built for a Fair, Easy Trade</h1>
-        <p>
+        <h1 class="animate-pop-in" style="animation-delay: 0.2s;">
+          Built for a Fair, Easy Trade
+        </h1>
+        <p class="animate-pop-in" style="animation-delay: 0.3s;">
           Verified sellers, transparent pricing, and buyer protection —
           everything you need to trade with confidence.
         </p>
@@ -178,13 +193,13 @@
     <!-- ============ WHY CHOOSE US ============ -->
     <section class="section section-alt" id="how-it-works">
       <div class="container">
-        <div class="section-heading">
+        <div class="section-heading reveal">
           <p class="eyebrow">Why Best Enterprise</p>
           <h2>Built for a fair, easy trade</h2>
         </div>
 
         <div class="feature-grid">
-          <div class="feature-card">
+          <div class="feature-card animate-pop-in" style="animation-delay: 0.1s;">
             <i class="fa-solid fa-shield-halved"></i>
             <h3>Verified Sellers</h3>
             <p>
@@ -192,21 +207,21 @@
               sale.
             </p>
           </div>
-          <div class="feature-card">
+          <div class="feature-card animate-pop-in" style="animation-delay: 0.2s;">
             <i class="fa-solid fa-tag"></i>
             <h3>Fair Price Guide</h3>
             <p>
               See what similar units are selling for before you buy or list.
             </p>
           </div>
-          <div class="feature-card">
+          <div class="feature-card animate-pop-in" style="animation-delay: 0.3s;">
             <i class="fa-solid fa-truck"></i>
             <h3>Local Pickup Options</h3>
             <p>
               Search by suburb and arrange pickup or drop-off close to home.
             </p>
           </div>
-          <div class="feature-card">
+          <div class="feature-card animate-pop-in" style="animation-delay: 0.4s;">
             <i class="fa-solid fa-circle-check"></i>
             <h3>90-Day Protection</h3>
             <p>
@@ -221,13 +236,13 @@
     <!-- ============ TESTIMONIALS ============ -->
     <section class="section">
       <div class="container">
-        <div class="section-heading">
+        <div class="section-heading reveal">
           <p class="eyebrow">What people say</p>
           <h2>Trusted by buyers and sellers alike</h2>
         </div>
 
         <div class="testimonial-grid">
-          <div class="testimonial-card">
+          <div class="testimonial-card animate-pop-in" style="animation-delay: 0.1s;">
             <p>
               &ldquo;Sold my old split system in three days flat &mdash; way
               easier than the local classifieds.&rdquo;
@@ -235,7 +250,7 @@
             <h4>Priya M.</h4>
             <span>Accra</span>
           </div>
-          <div class="testimonial-card">
+          <div class="testimonial-card animate-pop-in" style="animation-delay: 0.2s;">
             <p>
               &ldquo;Found a barely-used window unit for half the retail price
               right before summer hit.&rdquo;
@@ -243,7 +258,7 @@
             <h4>Daniel K.</h4>
             <span>Aflao, Volta Region</span>
           </div>
-          <div class="testimonial-card">
+          <div class="testimonial-card animate-pop-in" style="animation-delay: 0.3s;">
             <p>
               &ldquo;The price guide made it easy to know I was asking a fair
               amount for my old unit.&rdquo;

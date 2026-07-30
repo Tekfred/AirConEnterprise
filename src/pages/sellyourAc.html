@@ -19,7 +19,7 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
 
-    <!-- Shared stylesheet: variables, reset, header/nav, footer, buttons -->
+    <!-- Shared stylesheet: variables, reset, header/nav, footer, buttons, animation system -->
     <link rel="stylesheet" href="../style.css" />
 
     <style>
@@ -176,6 +176,13 @@
         font-size: 2rem;
         color: var(--color-text-muted);
         margin-bottom: 10px;
+        transition:
+          transform 0.3s ease,
+          color 0.3s ease;
+      }
+      .photo-dropzone:hover i {
+        transform: translateY(-4px);
+        color: var(--color-accent);
       }
       .photo-dropzone p {
         font-size: 0.88rem;
@@ -238,6 +245,16 @@
         text-align: center;
       }
 
+      /* Buttons */
+      .btn {
+        transition:
+          transform 0.25s ease,
+          box-shadow 0.25s ease;
+      }
+      .btn:hover {
+        transform: translateY(-3px);
+      }
+
       /* ─── Responsive (page-specific only) ─── */
       @media (max-width: 900px) {
         .form-row-3 {
@@ -291,13 +308,18 @@
     </header>
 
     <!-- ============ PAGE HERO ============ -->
-    <section class="page-hero">
+    <section class="page-hero reveal">
       <div class="container">
-        <p class="eyebrow" style="color: rgba(255, 255, 255, 0.75)">
+        <p
+          class="eyebrow animate-pop-in"
+          style="color: rgba(255, 255, 255, 0.75); animation-delay: 0.1s;"
+        >
           Free listing
         </p>
-        <h1>List Your Air Conditioner</h1>
-        <p>
+        <h1 class="animate-pop-in" style="animation-delay: 0.2s;">
+          List Your Air Conditioner
+        </h1>
+        <p class="animate-pop-in" style="animation-delay: 0.3s;">
           Fill in a few details, set your price, and start getting offers from
           verified buyers — 100% free.
         </p>
@@ -307,16 +329,16 @@
     <!-- Trust badges -->
     <div class="trust-strip">
       <div class="trust-strip-inner">
-        <div class="trust-item">
+        <div class="trust-item animate-pop-in" style="animation-delay: 0.1s;">
           <i class="fa-solid fa-circle-check"></i> Free to list
         </div>
-        <div class="trust-item">
+        <div class="trust-item animate-pop-in" style="animation-delay: 0.2s;">
           <i class="fa-solid fa-shield-halved"></i> Verified buyers only
         </div>
-        <div class="trust-item">
+        <div class="trust-item animate-pop-in" style="animation-delay: 0.3s;">
           <i class="fa-solid fa-bolt"></i> Avg. response in 2 hrs
         </div>
-        <div class="trust-item">
+        <div class="trust-item animate-pop-in" style="animation-delay: 0.4s;">
           <i class="fa-solid fa-tag"></i> You set the price
         </div>
       </div>
@@ -325,7 +347,7 @@
     <!-- ============ LISTING FORM ============ -->
     <section class="section">
       <div class="container">
-        <div class="listing-form-wrapper">
+        <div class="listing-form-wrapper reveal">
           <form id="sell-listing-form" novalidate>
             <!-- ─── Section 1: AC Details ─── -->
             <h2 class="form-section-title">

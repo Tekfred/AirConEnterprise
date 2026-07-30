@@ -19,7 +19,7 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
 
-    <!-- Shared stylesheet: variables, reset, header/nav, footer, buttons -->
+    <!-- Shared stylesheet: variables, reset, header/nav, footer, buttons, animation system -->
     <link rel="stylesheet" href="../style.css" />
 
     <style>
@@ -73,6 +73,10 @@
         align-items: flex-start;
         gap: 16px;
         margin-bottom: 24px;
+        transition: transform 0.25s ease;
+      }
+      .contact-detail:hover {
+        transform: translateX(4px);
       }
       .contact-detail-icon {
         width: 44px;
@@ -85,6 +89,14 @@
         justify-content: center;
         font-size: 1rem;
         flex-shrink: 0;
+        transition:
+          transform 0.25s ease,
+          background-color 0.25s ease;
+      }
+      .contact-detail:hover .contact-detail-icon {
+        transform: scale(1.1);
+        background-color: var(--color-primary);
+        color: #ffffff;
       }
       .contact-detail-text strong {
         display: block;
@@ -179,6 +191,16 @@
         font-weight: 500;
       }
 
+      /* Buttons */
+      .btn {
+        transition:
+          transform 0.25s ease,
+          box-shadow 0.25s ease;
+      }
+      .btn:hover {
+        transform: translateY(-3px);
+      }
+
       /* ─── Responsive (page-specific only) ─── */
       @media (max-width: 900px) {
         .contact-layout {
@@ -231,13 +253,18 @@
     </header>
 
     <!-- ============ PAGE HERO ============ -->
-    <section class="page-hero">
+    <section class="page-hero reveal">
       <div class="container">
-        <p class="eyebrow" style="color: rgba(255, 255, 255, 0.75)">
+        <p
+          class="eyebrow animate-pop-in"
+          style="color: rgba(255, 255, 255, 0.75); animation-delay: 0.1s;"
+        >
           We're here to help
         </p>
-        <h1>Contact Us</h1>
-        <p>
+        <h1 class="animate-pop-in" style="animation-delay: 0.2s;">
+          Contact Us
+        </h1>
+        <p class="animate-pop-in" style="animation-delay: 0.3s;">
           Have a question about a listing or need support? Drop us a message and
           we'll get back to you quickly.
         </p>
@@ -249,7 +276,7 @@
       <div class="container">
         <div class="contact-layout">
           <!-- Info column -->
-          <div class="contact-info">
+          <div class="contact-info animate-pop-in" style="animation-delay: 0.1s;">
             <h2>Get in touch</h2>
             <p>
               We aim to respond to all enquiries within a few hours during
@@ -299,7 +326,7 @@
           </div>
 
           <!-- Contact form -->
-          <div class="form-card">
+          <div class="form-card animate-pop-in" style="animation-delay: 0.2s;">
             <h3>Send us a message</h3>
             <form id="contact-form" novalidate>
               <div class="form-row">

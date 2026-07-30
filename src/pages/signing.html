@@ -19,7 +19,7 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
 
-    <!-- Shared stylesheet: variables, reset, header/nav, footer, buttons -->
+    <!-- Shared stylesheet: variables, reset, header/nav, footer, buttons, animation system -->
     <link rel="stylesheet" href="../style.css" />
 
     <style>
@@ -127,6 +127,10 @@
         font-weight: 600;
         cursor: pointer;
         font-family: var(--font-heading);
+        transition: color 0.2s ease;
+      }
+      .password-toggle:hover {
+        color: var(--color-primary-dark);
       }
 
       .auth-forgot {
@@ -193,6 +197,16 @@
         text-decoration: underline;
       }
 
+      /* Buttons */
+      .btn {
+        transition:
+          transform 0.25s ease,
+          box-shadow 0.25s ease;
+      }
+      .btn:hover {
+        transform: translateY(-3px);
+      }
+
       /* ─── Responsive (page-specific only) ─── */
       @media (max-width: 700px) {
         .auth-card {
@@ -235,16 +249,25 @@
 
     <!-- ============ SIGN IN FORM ============ -->
     <div class="auth-wrapper">
-      <div class="auth-card">
-        <div class="auth-logo">
+      <div class="auth-card animate-pop-in">
+        <div class="auth-logo animate-pop-in" style="animation-delay: 0.1s;">
           <i class="fa-solid fa-snowflake"></i>
           Best Enterprise
         </div>
 
-        <h1>Welcome back</h1>
-        <p class="auth-sub">Sign in to manage your listings and messages.</p>
+        <h1 class="animate-pop-in" style="animation-delay: 0.2s;">
+          Welcome back
+        </h1>
+        <p class="auth-sub animate-pop-in" style="animation-delay: 0.3s;">
+          Sign in to manage your listings and messages.
+        </p>
 
-        <form id="signin-form" novalidate>
+        <form
+          id="signin-form"
+          novalidate
+          class="animate-pop-in"
+          style="animation-delay: 0.4s;"
+        >
           <div class="form-group">
             <label for="signin-email">Email Address</label>
             <input
@@ -292,9 +315,11 @@
           </div>
         </form>
 
-        <div class="auth-divider">or</div>
+        <div class="auth-divider animate-pop-in" style="animation-delay: 0.5s;">
+          or
+        </div>
 
-        <p class="auth-register">
+        <p class="auth-register animate-pop-in" style="animation-delay: 0.6s;">
           Don't have an account?&nbsp;<a href="sellyourAc.html"
             >Register as a seller</a
           >

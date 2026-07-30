@@ -26,40 +26,118 @@
     <link rel="stylesheet" href="style.css" />
 
     <style>
-      /* Hero */
+      /* ===== ANIMATIONS ===== */
+      @keyframes popIn {
+        from {
+          opacity: 0;
+          transform: scale(0.92) translateY(14px);
+        }
+        to {
+          opacity: 1;
+          transform: scale(1) translateY(0);
+        }
+      }
+      @keyframes fadeSlideUp {
+        from { opacity: 0; transform: translateY(20px); }
+        to   { opacity: 1; transform: translateY(0); }
+      }
+      @keyframes liveBlink {
+        0%,
+        100% {
+          opacity: 1;
+          box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.45);
+        }
+        50% {
+          opacity: 0.45;
+          box-shadow: 0 0 0 5px rgba(34, 197, 94, 0);
+        }
+      }
+      .animate-pop-in {
+        animation: popIn 0.5s ease-out forwards;
+        opacity: 0;
+      }
+      .live-dot {
+        animation: liveBlink 1.15s ease-in-out infinite;
+        background: #22c55e;
+        border-radius: 999px;
+        box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.5);
+        height: 0.45rem;
+        width: 0.45rem;
+        display: inline-block;
+      }
+      .reveal {
+        opacity: 0;
+        transform: translateY(20px);
+        transition:
+          opacity 0.6s ease-out,
+          transform 0.6s ease-out;
+      }
+      .reveal.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* ===== HERO ===== */
       .hero {
         padding: 80px 0;
         overflow: hidden;
-        background-image: url(/src/Assets/images/bakgroundhome.jpg);
+        background-image: url(Assets/images/bakgroundhome.jpg);
         background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        min-height: 85vh;
+        position: relative;
+      }
+      .hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-color: rgba(0, 0, 0, 0.55);
+        z-index: 0;
       }
       .hero-inner {
         display: grid;
         grid-template-columns: 1.1fr 0.9fr;
         gap: 50px;
         align-items: center;
+        position: relative;
+        z-index: 1;
+      }
+      .hero-text {
+        position: relative;
+        z-index: 1;
+      }
+      .hero-text .eyebrow {
+        color: rgba(255, 255, 255, 0.85);
       }
       .hero h1 {
         font-size: 2.75rem;
         margin: 14px 0 18px 0;
-        color: var(--color-text);
+        color: #ffffff;
+        text-shadow: 0 2px 12px rgba(0, 0, 0, 0.6);
+        animation: popIn 0.6s ease-out 0.1s forwards;
+        opacity: 0;
       }
       .hero-sub {
-        color: var(--color-text-muted);
+        color: #e8f0f8;
         max-width: 480px;
         margin-bottom: 30px;
         font-size: 1.05rem;
+        text-shadow: 0 1px 6px rgba(0, 0, 0, 0.5);
+        animation: popIn 0.6s ease-out 0.25s forwards;
+        opacity: 0;
       }
-
       .search-box {
         display: flex;
-        background-color: var(--color-surface);
-        border: 1px solid var(--color-border);
+        background-color: rgba(255, 255, 255, 0.15);
+        border: 1px solid rgba(255, 255, 255, 0.3);
         border-radius: 10px;
         box-shadow: var(--shadow);
         padding: 6px;
         margin-bottom: 24px;
         max-width: 520px;
+        animation: popIn 0.6s ease-out 0.4s forwards;
+        opacity: 0;
       }
       .search-box input,
       .search-box select {
@@ -69,24 +147,43 @@
         font-family: var(--font-body);
         font-size: 0.9rem;
         background: transparent;
-        color: var(--color-text);
+        color: white;
       }
-      .search-box input {
-        flex: 1;
+      .search-box input::placeholder {
+        color: rgba(255, 255, 255, 0.65);
       }
       .search-box select {
-        border-left: 1px solid var(--color-border);
+        border-left: 1px solid rgba(255, 255, 255, 0.3);
+      }
+      .search-box select option {
+        color: var(--color-text);
+        background: white;
+      }
+      .search-box button {
+        white-space: nowrap;
       }
       .hero-buttons {
         display: flex;
         gap: 16px;
         flex-wrap: wrap;
+        animation: popIn 0.6s ease-out 0.55s forwards;
+        opacity: 0;
+      }
+      .hero-buttons .btn-outline {
+        border-color: rgba(255, 255, 255, 0.5);
+        color: #ffffff;
+      }
+      .hero-buttons .btn-outline:hover {
+        background-color: #ffffff;
+        color: var(--color-primary);
       }
 
-      /* Gauge visual */
+      /* ===== GAUGE VISUAL ===== */
       .hero-visual {
         display: flex;
         justify-content: center;
+        animation: popIn 0.6s ease-out 0.3s forwards;
+        opacity: 0;
       }
       .gauge {
         position: relative;
@@ -169,7 +266,7 @@
         transform: translateY(-50%);
       }
 
-      /* Stats strip */
+      /* ===== STATS STRIP ===== */
       .stats-strip {
         background-color: var(--color-primary);
         padding: 34px 0;
@@ -192,7 +289,7 @@
         margin-top: 4px;
       }
 
-      /* Category cards */
+      /* ===== CATEGORY CARDS ===== */
       .category-grid {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
@@ -241,7 +338,7 @@
         font-size: 2.6rem;
       }
 
-      /* ─── Responsive (page-specific only) ─── */
+      /* ─── RESPONSIVE ─── */
       @media (max-width: 900px) {
         .hero-inner {
           grid-template-columns: 1fr;
@@ -281,6 +378,7 @@
         <a href="#" class="logo">
           <i class="fa-solid fa-snowflake"></i>
           Best Enterprise
+          <span class="live-dot" style="margin-left: 6px;"></span>
         </a>
 
         <button
@@ -364,7 +462,7 @@
     </section>
 
     <!-- ============ TRUST / STATS STRIP ============ -->
-    <section class="stats-strip">
+    <section class="stats-strip reveal">
       <div class="container stats-grid">
         <div class="stat">
           <span>1,240+</span>
@@ -388,13 +486,13 @@
     <!-- ============ SHOP BY CATEGORY ============ -->
     <section class="section" id="categories">
       <div class="container">
-        <div class="section-heading">
+        <div class="section-heading reveal">
           <p class="eyebrow">Shop by type</p>
           <h2>Find the right unit for your space</h2>
         </div>
 
         <div class="category-grid">
-          <a href="pages/Buy.html" class="category-card">
+          <a href="pages/Buy.html" class="category-card animate-pop-in" style="animation-delay: 0.1s;">
             <img
               src="Assets/images/windowAirConditioner.jpg"
               alt="Window air conditioner"
@@ -405,7 +503,7 @@
             </div>
           </a>
 
-          <a href="pages/Buy.html" class="category-card">
+          <a href="pages/Buy.html" class="category-card animate-pop-in" style="animation-delay: 0.2s;">
             <img
               src="https://images.unsplash.com/photo-1718203862467-c33159fdc504?auto=format&fit=crop&w=500&q=80"
               alt="Split system outdoor unit"
@@ -416,7 +514,7 @@
             </div>
           </a>
 
-          <a href="pages/Buy.html" class="category-card">
+          <a href="pages/Buy.html" class="category-card animate-pop-in" style="animation-delay: 0.3s;">
             <img
               src="https://images.unsplash.com/photo-1638444547500-5a63a2450065?auto=format&fit=crop&w=500&q=80"
               alt="Multiple air conditioning units on a building"
@@ -427,7 +525,7 @@
             </div>
           </a>
 
-          <a href="pages/Buy.html" class="category-card category-card--icon">
+          <a href="pages/Buy.html" class="category-card category-card--icon animate-pop-in" style="animation-delay: 0.4s;">
             <img
               src="Assets/images/acMentainanceService.jpg"
               alt="AC maintenance service"
@@ -449,10 +547,11 @@
           <a href="#" class="logo logo-footer">
             <i class="fa-solid fa-snowflake"></i>
             Best Enterprise
+            <span class="live-dot" style="margin-left: 6px;"></span>
           </a>
           <p>
             A simple, trusted marketplace for buying and selling air
-            conditioners across Ghana
+            conditioners across Australia.
           </p>
         </div>
 
