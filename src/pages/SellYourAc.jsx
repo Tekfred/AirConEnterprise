@@ -4,6 +4,7 @@ import Button from '../components/Button'
 import FormInput from '../components/FormInput'
 import FormSelect from '../components/FormSelect'
 import FormTextarea from '../components/FormTextarea'
+import clsx from 'clsx'
 
 const TRUST_ITEMS = [
   { icon: 'fa-circle-check', text: 'Free to list' },

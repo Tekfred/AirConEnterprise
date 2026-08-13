@@ -1,6 +1,7 @@
 import SectionHeading from '../components/SectionHeading'
 import Button from '../components/Button'
 import PopIn from '../components/PopIn'
+import clsx from 'clsx'
 
 const STEPS = [
   { num: '01', title: 'Snap a few photos', body: 'Add photos, the brand, and your asking price. Listing is completely free.' },

@@ -4,6 +4,7 @@ import Card from '../components/Card'
 import Badge from '../components/Badge'
 import Button from '../components/Button'
 import PopIn from '../components/PopIn'
+import clsx from 'clsx'
 
 const LISTINGS = [
   {
@@ -43,7 +44,7 @@ export default function Buy() {
         <div className="container">
           <p className={clsx('eyebrow', 'mb-3')} style={{ color: 'rgba(255,255,255,0.75)' }}>Featured listings</p>
           <h1 className={clsx('text-[2.5rem]', 'mb-3')}>Find Your Perfect AC</h1>
-          <p className={clsx('text-[1.05rem]', 'text-[rgba(255,255,)25max-w-140ax-w-[560px]', 'mx-auto', 'mb-6')}>
+          <p className={clsx('text-[1.05rem]', 'text-[rgba(255,255,255,0.85)]', 'max-w-140', 'mx-auto', 'mb-6')}>
             Browse verified new & used units — all sellers are ID-checked and community-rated.
           </p>
           <form className={clsx('buy-search', 'flex', 'bg-white/15', 'border', 'border-white/30', 'rounded-[10px]', 'p-1.5', 'max-w-150', 'mx-auto')}>

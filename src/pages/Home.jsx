@@ -3,6 +3,8 @@ import SectionHeading from '../components/SectionHeading'
 import Card from '../components/Card'
 import Button from '../components/Button'
 import useScrollReveal from '../hooks/useScrollReveal'
+import PopIn from '../components/PopIn'
+import clsx from 'clsx'
 
 const CATEGORIES = [
   {

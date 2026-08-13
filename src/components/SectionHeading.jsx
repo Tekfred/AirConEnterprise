@@ -1,3 +1,5 @@
+import clsx from 'clsx'
+
 export default function SectionHeading({ eyebrow, title }) {
   return (
     <div className={clsx('section-heading', 'text-center', 'max-w-140', 'mx-auto', 'mb-12.5')}>

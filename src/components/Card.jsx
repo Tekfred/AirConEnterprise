@@ -1,3 +1,5 @@
+import clsx from 'clsx'
+
 export default function Card({ eyebrow, title, body, icon, imageSrc, imageAlt, href, ctaText, ctaHref, className = '', children }) {
   const content = (
     <>

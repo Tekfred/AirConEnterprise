@@ -1,6 +1,7 @@
 import SectionHeading from '../components/SectionHeading'
 import Card from '../components/Card'
 import PopIn from '../components/PopIn'
+import clsx from 'clsx'
 
 const FEATURES = [
   { icon: 'fa-shield-halved', title: 'Verified Sellers', body: 'Every seller is ID-checked and rated by the community after each sale.' },

@@ -1,3 +1,4 @@
+import clsx from 'clsx'
 import { Outlet, NavLink } from 'react-router-dom'
 import { useTheme } from '../context/ThemeContext'
 
@@ -6,8 +7,8 @@ export default function MainLayout() {
 
   return (
     <div className={clsx('min-h-screen', 'flex', 'flex-col', 'bg-white', 'text-text')}>
-      <header className={clsx('site-header', 'bg-surface', 'border-b', 'border-border', 'sticky', 'top-0', 'z-100')}>
-        <div className={clsx('container', 'header-inner', 'flex', 'items-center', 'justify-between', 'py-4.5')}>
+      <header className={clsx('site-header', 'bg-surface', 'border-b', 'border-border', 'sticky', 'top-0', 'z-[100]')}>
+        <div className={clsx('container', 'header-inner', 'flex', 'items-center', 'justify-between', 'py-[18px]')}>
           <NavLink to="/" className={clsx('logo', 'font-heading', 'font-bold', 'text-[1.3rem]', 'text-primary', 'flex', 'items-center', 'gap-2')}>
             <i className={clsx('fa-solid', 'fa-snowflake')}></i>
             Best Enterprise
@@ -38,7 +39,7 @@ export default function MainLayout() {
         <Outlet />
       </main>
 
-      <footer className={clsx('site-footer', 'bg-dark-bg', 'text-[#cfe3f0]', 'pt-15')}>
+      <footer className={clsx('site-footer', 'bg-dark-bg', 'text-[#cfe3f0]', 'pt-[60px]')}>
         <div className={clsx('container', 'footer-grid', 'grid', 'grid-cols-1', 'sm:grid-cols-2', 'lg:grid-cols-4', 'gap-8', 'pb-10', 'border-b', 'border-white/10')}>
           <div className="footer-brand">
             <NavLink to="/" className={clsx('logo', 'logo-footer', 'font-heading', 'font-bold', 'text-[1.3rem]', 'text-white', 'flex', 'items-center', 'gap-2')}>
