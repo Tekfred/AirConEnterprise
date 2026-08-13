@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import SectionHeading from '../components/SectionHeading'
-import Card from '../components/Card'
+// import Card from '../components/Card'
 import Badge from '../components/Badge'
 import Button from '../components/Button'
 import PopIn from '../components/PopIn'

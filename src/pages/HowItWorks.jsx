@@ -1,5 +1,5 @@
 import SectionHeading from '../components/SectionHeading'
-import Card from '../components/Card'
+// import Card from '../components/Card'
 import PopIn from '../components/PopIn'
 import clsx from 'clsx'
 
