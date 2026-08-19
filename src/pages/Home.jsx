@@ -10,21 +10,21 @@ const CATEGORIES = [
   {
     title: 'Window AC',
     body: 'Compact and easy to install in a standard window frame.',
-    image: 'Assets/images/IFB Air Conditioners.jpg',
+    image: 'assets/images/windowAirConditioner.jpg',
     alt: 'Window air conditioner',
     to: '/buy',
   },
   {
     title: 'Split System',
     body: 'Quiet indoor unit with a separate outdoor condenser.',
-    image: 'https://images.unsplash.com/photo-1718203862467-c33159fdc504?auto=format&fit=crop&w=500&q=80',
+    image: 'assets/images/photo_2026-07-27_15-49-45.jpg',
     alt: 'Split system outdoor unit',
     to: '/buy',
   },
   {
     title: 'Multi-Split / Central',
     body: 'Cool several rooms from one outdoor unit or ducted system.',
-    image: 'https://images.unsplash.com/photo-1638444547500-5a63a2450065?auto=format&fit=crop&w=500&q=80',
+    image: 'assets/images/24b12b8ce4692f52cfb7960dc06c57e3.jpg',
     alt: 'Multiple air conditioning units on a building',
     to: '/buy',
   },
@@ -91,10 +91,10 @@ export default function Home() {
                 <div className={clsx('gauge-needle', 'absolute', 'w-1', 'h-[38%]', 'bg-text', 'rounded-sm', 'top-[12%]', 'left-1/2', '-translate-x-1/2', 'origin-bottom', 'animate-needle-sway', 'z-2')}></div>
                 <div className={clsx('gauge-center', 'absolute', 'w-4', 'h-4', 'bg-text', 'rounded-full', 'z-3')}></div>
               </div>
-              <div className={clsx('gauge-label', 'gauge-label-left', 'absolute', 'top-1/2', '-translate-y-1/2', '-left-2.5', 'font-heading', 'font-semibold', 'text-[0.85rem]', 'text-surface', 'bg-[rgba(16,36,62,0.55)]', 'px-3', 'py-1', 'rounded-full', 'flex', 'items-center', 'gap-1')}>
+              <div className={clsx('gauge-label', 'gauge-label-left', 'absolute', 'top-1/2', '-translate-y-1/2', '-left-2.5dark:text-white', 'font-heading', 'font-semibold', 'text-[0.85rem]', 'text-surface', 'bg-[rgba(16,36,62,0.55)]', 'px-3', 'py-1', 'rounded-full', 'flex', 'items-center', 'gap-1', 'dark:bg-mist-800',  'dark:text-white')}>
                 <i className={clsx('fa-solid', 'fa-snowflake')}></i> Buy
               </div>
-              <div className={clsx('gauge-label', 'gauge-label-right', 'absolute', 'top-1/2', '-translate-y-1/2', '-right-2.5', 'font-heading', 'font-semibold', 'text-[0.85rem]', 'text-surface', 'bg-[rgba(16,36,62,0.55)]', 'px-3', 'py-1', 'rounded-full', 'flex', 'items-center', 'gap-1')}>
+              <div className={clsx('gauge-label', 'gauge-label-right', 'absolute', 'top-1/2', '-translate-y-1/2', '-right-2.5', 'font-heading', 'font-semibold', 'text-[0.85rem]', 'text-surface', 'bg-[rgba(16,36,62,0.55)]', 'px-3', 'py-1', 'rounded-full', 'flex', 'items-center', 'gap-1', 'dark:bg-mist-800',  'dark:text-white')}>
                 <i className={clsx('fa-solid', 'fa-fire')}></i> Sell
               </div>
             </div>

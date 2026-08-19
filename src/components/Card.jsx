@@ -1,10 +1,10 @@
 import clsx from 'clsx'
 
-export default function Card({ eyebrow, title, body, icon, imageSrc, imageAlt, href, ctaText, ctaHref, className = '', children }) {
+export default function Card({ eyebrow, title, body, icon, image, alt, href, ctaText, ctaHref, className = '', children }) {
   const content = (
     <>
-      {imageSrc && (
-        <img src={imageSrc} alt={imageAlt || ''} className={clsx('w-full', 'h-37.5', 'object-cover')} />
+      {image && (
+        <img src={image} alt={alt || ''} className={clsx('w-full', 'h-37.5', 'object-cover')} />
       )}
       {icon && (
         <div className={clsx('category-icon', 'h-37.5', 'flex', 'items-center', 'justify-center', 'bg-[#eaf6ff]', 'text-primary', 'text-[2.6rem]')}>

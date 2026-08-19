@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @theme {
   /* Light mode tokens */
   --color-bg: #f4fbff;
@@ -13,17 +15,17 @@
   --color-border: #dceaf2;
   --color-success: #2fb380;
 
-  /* Dark mode tokens — blue/orange brand preserved, tuned for dark backgrounds */
-  --color-dark-bg: #0e2338;
-  --color-dark-surface: #162d4a;
-  --color-dark-primary: #4da6ff;
-  --color-dark-primary-dark: #3b9eff;
-  --color-dark-accent: #ff9470;
-  --color-dark-accent-dark: #ff7a45;
-  --color-dark-text: #e2e8f0;
-  --color-dark-text-muted: #94a3b8;
-  --color-dark-border: #2d4060;
-  --color-dark-success: #34d399;
+  /* Dark mode tokens — deeper, richer navy + glow-ready */
+--color-dark-bg: #0a0e1a;
+--color-dark-surface: #12172a;
+--color-dark-primary: #4d8dfa;
+--color-dark-primary-dark: #3b7ae8;
+--color-dark-accent: #f5a26b;
+--color-dark-accent-dark: #e88a4d;
+--color-dark-text: #f1f5f9;
+--color-dark-text-muted: #8b95a8;
+--color-dark-border: #232a3d;
+--color-dark-success: #34d399;
 
   --font-heading: "Poppins", sans-serif;
   --font-body: "Inter", sans-serif;
@@ -44,7 +46,7 @@
   }
   body {
     font-family: var(--font-body);
-    background-color: white;
+   background-color: var(--color-bg); 
     color: var(--color-text);
     line-height: 1.6;
   }

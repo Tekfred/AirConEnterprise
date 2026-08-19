@@ -1,9 +1,27 @@
-import clsx from 'clsx';
+import clsx from "clsx";
 
-export default function FormTextarea({ label, id, name, placeholder, value, onChange, error, required }) {
+export default function FormTextarea({
+  label,
+  id,
+  name,
+  placeholder,
+  value,
+  onChange,
+  error,
+  required,
+}) {
   return (
     <div className="form-group">
-      <label htmlFor={id} className={clsx('block', 'text-sm', 'font-semibold', 'text-text', 'mb-1')}>
+      <label
+        htmlFor={id}
+        className={clsx(
+          "block",
+          "text-sm",
+          "font-semibold",
+          "text-text",
+          "mb-1",
+        )}
+      >
         {label} {required && <span className="text-red-500">*</span>}
       </label>
       <textarea
@@ -13,9 +31,26 @@ export default function FormTextarea({ label, id, name, placeholder, value, onCh
         value={value}
         onChange={onChange}
         rows="5"
-        className={'w-full px-3 py-2 border border-border rounded-lg font-body text-sm text-text bg-white outline-none transition-colors resize-y min-h-30 ' + (error ? 'border-red-500' : 'focus:border-primary focus:shadow-[0_0_0_3px_rgba(14,134,212,0.12)]')}
+        className={
+          "w-full px-3 py-2 border border-border rounded-lg font-body text-sm text-text bg-(--color-bg) outline-none transition-colors resize-y min-h-30 " +
+          (error
+            ? "border-red-500"
+            : "focus:border-primary focus:shadow-[0_0_0_3px_rgba(14,134,212,0.12)]")
+        }
       />
-      {error && <span className={clsx('form-error', 'text-xs', 'text-red-500', 'mt-1', 'block')}>{error}</span>}
+      {error && (
+        <span
+          className={clsx(
+            "form-error",
+            "text-xs",
+            "text-red-500",
+            "mt-1",
+            "block",
+          )}
+        >
+          {error}
+        </span>
+      )}
     </div>
-  )
+  );
 }
