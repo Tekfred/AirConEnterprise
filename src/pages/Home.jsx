@@ -51,7 +51,7 @@ export default function Home() {
     <div>
       {/* Hero */}
       <section className={clsx('hero', 'pt-20', 'overflow-hidden')}>
-        <div className={clsx('container', 'hero-inner', 'grid', 'grid-cols-1', 'lg:grid-cols-[1.1fr_0.9fr]', 'gap-12.5', 'items-center')}>
+        <div className={clsx('container', 'hero-inner', 'grid', 'grid-cols-1', 'lg:grid-cols-[1.1fr_0.9fr]', 'gap-12.5', 'items-center', 'bg-[url(assets/images/backgroundhome.jpj)]')}>
           <div className="hero-text">
             <p className="eyebrow">Best Enterprise's marketplace for air conditioners</p>
             <h1 className={clsx('text-[2.75rem]', 'mt-3.5', 'mb-4.5', 'text-text', 'leading-tight')}>
@@ -77,7 +77,7 @@ export default function Home() {
               <button type="submit" className={clsx('btn', 'btn-primary', 'whitespace-nowrap')}>Search</button>
             </form>
 
-            <div className={clsx('hero-buttons', 'flex', 'gap-4', 'flex-wrap')}>
+            <div className={clsx('hero-buttons', 'flex', 'gap-4', 'flex-wrap', 'mb-15')}>
               <Button to="/buy" variant="primary">Browse Listings</Button>
               <Button to="/sell-your-ac" variant="outline">List Your AC — It's Free</Button>
             </div>
