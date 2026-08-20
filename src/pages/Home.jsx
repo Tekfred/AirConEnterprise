@@ -72,7 +72,7 @@ export default function Home() {
             "gap-12.5",
             "items-center",
             "relative",
-            "z-[10]",
+            "z-10",
           )}
         >
           <div className="hero-text">
